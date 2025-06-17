@@ -1,0 +1,6 @@
+@AiNews.Web_HostAddress = http://localhost:5041
+
+GET {{AiNews.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
