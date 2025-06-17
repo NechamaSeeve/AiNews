@@ -6,8 +6,9 @@ namespace AiNews.Web.Services
 
     public class ScraperServices
     {
-        public string ExtractCleanText(string html)
+        public string ScrapeNewsArticle(string newsUrl)
         {
+            var html = GetNewsArticleHtml(newsUrl);
             var parser = new HtmlParser();
             var document = parser.ParseDocument(html);
 
@@ -41,7 +42,7 @@ namespace AiNews.Web.Services
         }
 
 
-        public string GetNewsArticalHtml(string newsUrl)
+        private string GetNewsArticleHtml(string newsUrl)
         {
             var handler = new HttpClientHandler
             {

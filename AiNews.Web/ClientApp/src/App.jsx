@@ -22,7 +22,7 @@ const App = () => {
 
     const onSummarizeClick = async () => {
         if (!newsUrl) {
-            setError('Please enter a news artical url.');
+            setError('Please enter URL for a news article.');
             return;
         }
 
@@ -37,7 +37,7 @@ const App = () => {
 
             setSummary(data.newsSummary);
         } catch (err) {
-            setError('Something went wrong while Summarizing  the artical.');
+            setError('An error occurred while summarizing.');
             console.error(err);
         } finally {
             setLoading(false);
@@ -59,7 +59,7 @@ const App = () => {
                         Summarizing...
                     </>
                 ) : (
-                    'Summarize Artical'
+                    'Summarize Article'
                 )}</button>
             </div>
 

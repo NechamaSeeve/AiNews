@@ -28,9 +28,10 @@ namespace AiNews.Web.Controllers
         public Summary Summarize(NewsViewModel vm)
         {
             var scraperService = new ScraperServices();
-            string html = scraperService.GetNewsArticalHtml(vm.NewsUrl);
-            string text = scraperService.ExtractCleanText(html);
-            var prompt = $"as a News reporter give a full summary of the news based on this text {text}.";
+
+            string text = scraperService.ScrapeNewsArticle(vm.NewsUrl);
+            
+            var prompt = $"As a News Reporter, give a full summary of the news based on this text {text}.";
 
 
             var ollamaRequest = new
