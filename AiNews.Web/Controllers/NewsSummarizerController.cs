@@ -20,6 +20,7 @@ namespace AiNews.Web.Controllers
         public string NewsSummary { get; set; }
     }
 
+
     [Route("api/[controller]")]
     [ApiController]
     public class NewsSummarizerController : ControllerBase
