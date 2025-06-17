@@ -28,8 +28,9 @@ namespace AiNews.Web.Controllers
         [HttpPost("Summarize")]
         public Summary Summarize(NewsViewModel vm)
         {
-            string html = new ScraperServices().GetNewsArticalHtml(vm.NewsUrl);
-            string text = new ScraperServices().ExtractCleanText(html);
+            var scraperService = new ScraperServices();
+            string html = scraperService.GetNewsArticalHtml(vm.NewsUrl);
+            string text = scraperService.ExtractCleanText(html);
             var prompt = $"as a News reporter give a full summary of the news based on this text {text}.";
 
 
